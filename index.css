@@ -40,14 +40,14 @@ header:hover {
   background-color: #fff;
 }
 
-header>.inner {
+header > .inner {
   height: 72px;
   margin: auto;
   display: flex;
   padding: 0 24px;
 }
 
-header>.inner .header__logo {
+header > .inner .header__logo {
   position: absolute;
   left: 0;
   top: 0;
@@ -56,7 +56,7 @@ header>.inner .header__logo {
   margin: auto;
 }
 
-header .inner .header__logo>img {
+header .inner .header__logo > img {
   display: block;
   width: 105px;
   height: 32px;
@@ -101,7 +101,7 @@ header .inner .header__menu .item:hover .item__name a span {
 header .inner .header__menu .item .item__content {
   /* 화면 전체 사용을 위한 fixed 선언 */
   position: fixed;
-  background-color: orange;
+  background-color: whitesmoke;
   /* 요소 상의 부모 위치를 따라 가므로 left: 0 으로 뷰포트 기준으로 처리 */
   left: 0;
   /* 요소 상의 부모 크기가 아니라 뷰포트의 크기를 받기 위해 100% 처리 */
@@ -119,7 +119,30 @@ header .inner .header__menu .item .item__content {
   display: none;
 }
 
+/* 드롭 다운 구현 시작 */
+header .inner .header__menu .item .item__contents {
+  /* 화면 전체 사용을 위한 fixed 선언 */
+  position: fixed;
+  background-color: whitesmoke;
+  /* 요소 상의 부모 위치를 따라 가므로 left: 0 으로 뷰포트 기준으로 처리 */
+  left: 0;
+  /* 요소 상의 부모 크기가 아니라 뷰포트의 크기를 받기 위해 100% 처리 */
+  width: 100%;
+
+  /* top 값을 헤더랑 동일하게 주면 hover 유지가 안되어서 컨텐츠로 접근이 안되는 문제 발생 */
+  top: 70px;
+  z-index: 1;
+
+  /* hover 상태에서만 보여야 하므로 display none 처리 */
+  display: none;
+}
+
 header .inner .header__menu .item:hover .item__content {
+  /* hover 시 보이도록 처리 */
+  display: block;
+}
+
+header .inner .header__menu .item:hover .item__contents {
   /* hover 시 보이도록 처리 */
   display: block;
 }
@@ -130,34 +153,43 @@ header .inner .header__menu .item .item__content .inner {
   display: flex;
 }
 
-header .inner .header__menu .item .item__content .inner>li {
+header .inner .header__menu .item .item__content .inner > li {
   width: 420px;
   padding-right: 20px;
 }
 
-header .inner .header__menu .item .item__content .inner>li>ul>p {
+header .inner .header__menu .item .item__content .inner > li > ul > p {
   font-size: 14px;
   color: #222529;
   margin-bottom: 20px;
 }
 
-header .inner .header__menu .item .item__content .inner>li>ul>li {
+header .inner .header__menu .item .item__content .inner > li > ul > li {
   font-size: 14px;
   position: relative;
   display: block;
   padding: 20px 0;
 }
 
-header .inner .header__menu .item .item__content .inner>li>ul>li:hover {
+header .inner .header__menu .item .item__content .inner > li > ul > li:hover {
   background-color: #f1f3f5;
   cursor: pointer;
 }
 
-header .inner .header__menu .item .item__content .inner>li>ul>li:hover span {
+header
+  .inner
+  .header__menu
+  .item
+  .item__content
+  .inner
+  > li
+  > ul
+  > li:hover
+  span {
   opacity: 1;
 }
 
-header .inner .header__menu .item .item__content .inner>li>ul>li>img {
+header .inner .header__menu .item .item__content .inner > li > ul > li > img {
   /* 이미지는 float 속성을 사용하여 처리 */
   float: left;
   width: 40px;
@@ -165,8 +197,8 @@ header .inner .header__menu .item .item__content .inner>li>ul>li>img {
   margin-right: 10px;
 }
 
-header .inner .header__menu .item .item__content .inner>li>ul>li>div {
-  line-height: 2.0;
+header .inner .header__menu .item .item__content .inner > li > ul > li > div {
+  line-height: 2;
 }
 
 header .inner .header__menu .item .item__content .inner .gray {
@@ -183,7 +215,7 @@ header .inner .header__btn {
   margin: auto;
 }
 
-header .inner .header__btn>div {
+header .inner .header__btn > div {
   margin-left: 15px;
   height: 40px;
 }
