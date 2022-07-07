@@ -101,7 +101,7 @@ header .inner .header__menu .item:hover .item__name a span {
 header .inner .header__menu .item .item__content {
   /* 화면 전체 사용을 위한 fixed 선언 */
   position: fixed;
-  background-color: white;
+  background-color: orange;
   /* 요소 상의 부모 위치를 따라 가므로 left: 0 으로 뷰포트 기준으로 처리 */
   left: 0;
   /* 요소 상의 부모 크기가 아니라 뷰포트의 크기를 받기 위해 100% 처리 */
